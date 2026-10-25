@@ -2,6 +2,7 @@
 # Run every shell test in EmComm Tools OS Community's tests directory.
 set -u
 
+SCRIPT_PATH="$(realpath -- "${BASH_SOURCE[0]}")"
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 if [[ -d "$SCRIPT_DIR/tests" ]]; then
     TEST_DIR="$SCRIPT_DIR/tests"
@@ -12,7 +13,7 @@ else
     exit 2
 fi
 
-mapfile -d '' tests < <(find "$TEST_DIR" -maxdepth 1 -type f -name '*.sh' -print0 | sort -z)
+mapfile -d '' tests < <(find "$TEST_DIR" -maxdepth 1 -type f -name '*.sh' ! -samefile "$SCRIPT_PATH" -print0 | sort -z)
 if (( ${#tests[@]} == 0 )); then
     echo "ERROR: No .sh tests found in $TEST_DIR" >&2
     exit 2
