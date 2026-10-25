@@ -18,7 +18,7 @@ et-log "Installing ${APP} ${VERSION}..."
 
 if [[ ! -e ${ET_DIST_DIR}/${DOWNLOAD_FILE} ]]; then
 
-  URL="https://paranoiaworks.mobi/download/files/${DOWNLOAD_FILE}"
+  URL="https://paranoiaworks.com/download/${DOWNLOAD_FILE}"
 
   download_with_retries ${URL} ${DOWNLOAD_FILE}
   mv ${DOWNLOAD_FILE} ${ET_DIST_DIR}

@@ -28,7 +28,7 @@ et-log "Installing Linbpq..."
 
 # Install the web interface for LinBPQ
 HTML_ZIP_FILE=HTMLPages.zip
-HTML_ZIP_URL="http://www.cantab.net/users/john.wiseman/Downloads/Beta/${HTML_ZIP_FILE}"
+HTML_ZIP_URL=https://web.archive.org/web/20260312171932/https://www.cantab.net/users/john.wiseman/Downloads/Beta/${HTML_ZIP_FILE}"
 BBS_HOME="/etc/skel/.local/share/emcomm-tools/bbs-server"
 BBS_HOME_FILES="${BBS_HOME}/Files"
 
@@ -65,7 +65,7 @@ dpkg --add-architecture i386 &&  apt update && apt install \
   zlib1g:i386 \
   -y
 
-URL="https://www.cantab.net/users/john.wiseman/Downloads/${FILE}"
+URL=https://web.archive.org/web/20260312171932/https://www.cantab.net/users/john.wiseman/Downloads/${FILE}"
 
 if [ ! -e ${FILE} ]; then
   et-log "Downloading Linbpq: ${URL}"

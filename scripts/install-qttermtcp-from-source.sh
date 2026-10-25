@@ -47,7 +47,7 @@ apt install \
 
 if [ ! -e ${ET_DIST_DIR}/${DOWNLOAD_FILE} ]; then
 
-  URL=http://www.cantab.net/users/john.wiseman/Downloads/${DOWNLOAD_FILE}
+  URL=https://web.archive.org/web/20251017021255/https://www.cantab.net/users/john.wiseman/Downloads/${DOWNLOAD_FILE}
 
   et-log "Downloading QtTermTCP: ${URL}"
   curl -s -L -o ${DOWNLOAD_FILE} --fail ${URL}
